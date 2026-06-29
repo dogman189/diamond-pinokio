@@ -66,10 +66,35 @@ module.exports = {
       } else {
         return [{
           icon: "fa-solid fa-power-off",
-          text: "Start Counter Strike",
+          text: "Counter Strike 2x (300×560)",
           href: "start.js",
           params: {
-            branch: "csgo"
+            branch: "csgo",
+            size_multiplier: "2"
+          }
+        }, {
+          icon: "fa-solid fa-power-off",
+          text: "Counter Strike 3x (450×840)",
+          href: "start.js",
+          params: {
+            branch: "csgo",
+            size_multiplier: "3"
+          }
+        }, {
+          icon: "fa-solid fa-power-off",
+          text: "Counter Strike 4x (600×1120)",
+          href: "start.js",
+          params: {
+            branch: "csgo",
+            size_multiplier: "4"
+          }
+        }, {
+          icon: "fa-solid fa-power-off",
+          text: "Counter Strike 5x (750×1400)",
+          href: "start.js",
+          params: {
+            branch: "csgo",
+            size_multiplier: "5"
           }
         }, {
           icon: "fa-solid fa-power-off",
@@ -78,6 +103,10 @@ module.exports = {
           params: {
             branch: "main"
           }
+        }, {
+          icon: "fa-solid fa-gear",
+          text: "Quality Settings",
+          href: "configure.js",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
