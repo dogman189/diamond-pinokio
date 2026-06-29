@@ -93,6 +93,20 @@ module.exports = {
             }
           }))
         }, {
+          icon: "fa-solid fa-star",
+          text: "Enhanced",
+          menu: resolutions.map(n => ({
+            icon: "fa-solid fa-power-off",
+            text: `Counter Strike ${n}x (600×1120)`,
+            href: "start.js",
+            params: {
+              branch: "csgo",
+              size_multiplier: n,
+              quality: "higher_quality",
+              enhance: "true"
+            }
+          }))
+        }, {
           icon: "fa-solid fa-power-off",
           text: "Start Atari",
           href: "start.js",

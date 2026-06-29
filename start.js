@@ -16,7 +16,7 @@ module.exports = {
         message: [
           "git checkout {{args.branch}}",
           "{{args.branch === 'main' ? 'python src/play.py --pretrained --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + (args.quality || 'fast') : null}}",
-          "{{args.branch === 'csgo' ? 'python src/play.py --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + (args.quality || 'fast') : null}}",
+          "{{args.branch === 'csgo' ? 'python src/play.py --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + (args.quality || 'fast') + (args.enhance ? ' --enhance' : '') : null}}",
         ],
         on: [{
           "event": "/(press enter|enter a number)/i",

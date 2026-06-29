@@ -7,7 +7,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/eloialonso/diamond app",
+          "git clone https://github.com/dogman189/diamond app",
         ]
       }
     },
@@ -19,6 +19,14 @@ module.exports = {
         message: [
           "uv pip install -r requirements.txt"
         ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: ["uv pip install realesrgan"]
       }
     },
     {
