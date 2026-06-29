@@ -19,17 +19,22 @@ module.exports = {
       }]
     }
   }, {
+    method: "local.set",
+    params: {
+      quality: "{{input.quality}}"
+    }
+  }, {
     method: "json.set",
     params: {
-      path: "settings.json",
-      key: "quality",
-      value: "{{input.quality}}"
+      "settings.json": {
+        "quality": "{{local.quality}}"
+      }
     }
   }, {
     method: "notify",
     params: {
       title: "Quality Set",
-      message: "Upsampler set to {{input.quality === 'fast' ? 'Fast' : 'High Quality'}}. Launch a CS:GO resolution to play."
+      message: "Upsampler set to {{local.quality === 'fast' ? 'Fast' : 'High Quality'}}. Launch a CS:GO resolution to play."
     }
   }]
 }
