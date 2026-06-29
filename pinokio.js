@@ -64,38 +64,34 @@ module.exports = {
           href: "link.js",
         }]
       } else {
+        let resolutions = ["2", "3", "4", "5"]
+        let dims = { "2": "300×560", "3": "450×840", "4": "600×1120", "5": "750×1400" }
         return [{
-          icon: "fa-solid fa-power-off",
-          text: "Counter Strike 2x (300×560)",
-          href: "start.js",
-          params: {
-            branch: "csgo",
-            size_multiplier: "2"
-          }
+          icon: "fa-solid fa-bolt",
+          text: "Fast",
+          menu: resolutions.map(n => ({
+            icon: "fa-solid fa-power-off",
+            text: `Counter Strike ${n}x (${dims[n]})`,
+            href: "start.js",
+            params: {
+              branch: "csgo",
+              size_multiplier: n,
+              quality: "fast"
+            }
+          }))
         }, {
-          icon: "fa-solid fa-power-off",
-          text: "Counter Strike 3x (450×840)",
-          href: "start.js",
-          params: {
-            branch: "csgo",
-            size_multiplier: "3"
-          }
-        }, {
-          icon: "fa-solid fa-power-off",
-          text: "Counter Strike 4x (600×1120)",
-          href: "start.js",
-          params: {
-            branch: "csgo",
-            size_multiplier: "4"
-          }
-        }, {
-          icon: "fa-solid fa-power-off",
-          text: "Counter Strike 5x (750×1400)",
-          href: "start.js",
-          params: {
-            branch: "csgo",
-            size_multiplier: "5"
-          }
+          icon: "fa-solid fa-crown",
+          text: "High Quality",
+          menu: resolutions.map(n => ({
+            icon: "fa-solid fa-power-off",
+            text: `Counter Strike ${n}x (${dims[n]})`,
+            href: "start.js",
+            params: {
+              branch: "csgo",
+              size_multiplier: n,
+              quality: "higher_quality"
+            }
+          }))
         }, {
           icon: "fa-solid fa-power-off",
           text: "Start Atari",
@@ -103,10 +99,6 @@ module.exports = {
           params: {
             branch: "main"
           }
-        }, {
-          icon: "fa-solid fa-gear",
-          text: "Quality Settings",
-          href: "configure.js",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",

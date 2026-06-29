@@ -5,13 +5,6 @@ module.exports = {
   daemon: true,
   run: [
     {
-      when: "{{exists('settings.json')}}",
-      method: "json.get",
-      params: {
-        settings: "settings.json"
-      }
-    },
-    {
       method: "shell.run",
       params: {
         id: "shell",
@@ -22,8 +15,8 @@ module.exports = {
         path: "app",
         message: [
           "git checkout {{args.branch}}",
-          "{{args.branch === 'main' ? 'python src/play.py --pretrained --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + ((local.settings || {}).quality || 'fast') : null}}",
-          "{{args.branch === 'csgo' ? 'python src/play.py --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + ((local.settings || {}).quality || 'fast') : null}}",
+          "{{args.branch === 'main' ? 'python src/play.py --pretrained --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + (args.quality || 'fast') : null}}",
+          "{{args.branch === 'csgo' ? 'python src/play.py --size-multiplier ' + (args.size_multiplier || '2') + ' --quality ' + (args.quality || 'fast') : null}}",
         ],
         on: [{
           "event": "/(press enter|enter a number)/i",
